@@ -191,6 +191,11 @@ jscss(
 // Or just pass in the paths
 ```
 
+##Leverage NPM
+
+Since these are node.js modules you're building for css, you can use npm to manage your css.
+
+
 ##Note
 
 I'm not ready for people to really start using this yet. It works, but it's not great. So, it's not in the npm registry just yet. But when it is, install it with:

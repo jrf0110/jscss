@@ -190,3 +190,13 @@ jscss(
 
 // Or just pass in the paths
 ```
+
+##Note
+
+I'm not ready for people to really start using this yet. It works, but it's not great. So, it's not in the npm registry just yet. But when it is, install it with:
+
+```
+npm install jscss
+```
+
+That's all, folks!

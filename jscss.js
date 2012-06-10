@@ -1,16 +1,22 @@
-var fs = require('fs')
-var compile = function(hash, indent){
-  var spaces = "  ", out = "", indent = indent || 0;
+var fs = require('fs');
+
+var indent = function(level){
+  var out = "";
+  for (var i = 0; i < level; i++){
+    out += "  ";
+  }
+  return out
+}
+
+var compile = function(hash, level){
+  var spaces = "  ", out = "", level = level || 0;
   for (var key in hash){
-    out += "\n";
-    for (var i = 0; i < indent; i++){
-      out += "  ";
-    }
+    out += indent(level);
     out += key;
     if (typeof hash[key] === "object"){
-      out += " {" + compile(hash[key], indent + 1) + "\n}\n";
+      out += " {\n" + compile(hash[key], level + 1) + indent(level) + "}\n";
     }else{
-      out += ": " + hash[key] + ";";
+      out += ": " + hash[key] + ";\n";
     }
   }
   return out;

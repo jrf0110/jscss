@@ -68,15 +68,20 @@ I'll admit, I"m still working on this. It will be here soon :)
 
 ```javascript
 module.exports = {
-  "h1": {
-    "font-size": "26px"
-  , "font-weight": "bold"
-  }
-, "p": {
-    "font-size": "12px"
-  , "a": {
-      "text-decoration": "none"
-    , "&:hover": { "border-width": "1px" }
+  '#header': {
+    "h1": {
+      "font-size": "26px"
+    , "font-weight": "bold"
+    }
+  , "p": {
+      "font-size": "12px"
+    , "a": {
+        "text-decoration": "none"
+      , "&:hover": { "border-width": "1px" }
+      }
+    , '> .poop': {
+        'color': 'brown'
+      }
     }
   }
 };
@@ -97,6 +102,9 @@ module.exports = {
 }
 #header p a:hover {
   border-width: 1px;
+}
+#header p > .poop {
+  color: brown;
 }
 ```
 

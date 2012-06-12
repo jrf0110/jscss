@@ -6,7 +6,7 @@ var indent = function(level){
     out += "  ";
   }
   return out
-}
+};
 
 var compile = function(hash, level){
   var spaces = "  ", out = "", level = level || 0;

@@ -64,8 +64,6 @@ module.exports = {
 
 ##Nested Rules
 
-I'll admit, I"m still working on this. It will be here soon :)
-
 ```javascript
 module.exports = {
   '#header': {
@@ -77,7 +75,6 @@ module.exports = {
       "font-size": "12px"
     , "a": {
         "text-decoration": "none"
-      , "&:hover": { "border-width": "1px" }
       }
     , '> .poop': {
         'color': 'brown'
@@ -110,11 +107,21 @@ module.exports = {
 
 ##Functions and Operators
 
-Ok, granted you can do this stuff yourself by parsing out the integers from string values, I plan on making it really easy in the future :)
+Currently all I have is hex math
+
+```javascript
+module.exports = {
+  '.jibber-jabber': {
+    color: globals.baseColor
+    // Pretty stupid but whatever
+  , "background-color": hex.multiply(globals.baseColor, globals.accent, globals.backgroundColor)
+  }
+}
+```
 
 ##Client-Side Usage
 
-Yeah, I made this for the client-side originally. It will work just fine except it relies on commonJS modules. So get a module loader and you're set. I'll experiment with various existing loaders.
+No reason why it won't work on the client. I just need to wrap everything in a style tag :)
 
 ##Animations, Media Queries, and Other More-Nested Features
 
@@ -201,8 +208,7 @@ jscss(
 
 ##Leverage NPM
 
-Since these are node.js modules you're building for css, you can use npm to manage your css.
-
+Since these are node.js modules you're building for css, you can use npm to manage your css. Soon we'll be up on jam once I get client-side working.
 
 ##Note
 

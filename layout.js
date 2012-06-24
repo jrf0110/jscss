@@ -8,6 +8,27 @@ module.exports = {
   , 'box-sizing': 'border-box'
   , 'margin-left': "20px"
   }
+
+, '#header': {
+    "h1": {
+      "font-size": "26px"
+    , "font-weight": "bold"
+    }
+  , "p": {
+      "font-size": "12px"
+    , "a": {
+        "text-decoration": "none"
+      // , "&:hover": { "border-width": "1px" }
+      }
+    , '> .poop': {
+        'color': 'brown'
+      }
+    }
+  , ".test": {
+      "font-size": "1.2rem"
+    }
+  }
+
 , '@-animation-keyframes spin': {
     '0%': {
       'transform': 'rotate(0deg)'

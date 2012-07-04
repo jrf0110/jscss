@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script type="text/javascript" src="../lib/index.js"></script>
+    <script type="text/javascript">
+      var roundedCorners = function(radius){
+        radius || (radius = "5px");
+        return {
+          "-webkit-border-radius": radius
+        , "-moz-border-radius": radius
+        , "border-radius": radius
+        };
+      };
+      var mix = function(obj1, obj2){
+        for (var key in obj2){
+          obj1[key] = obj2[key];
+        }
+        return obj1;
+      };
+      var cssObj = {
+        "body": {
+          "background-color": "pink"
+        }
+      , '.testing': mix({
+          "background-color": "#fff"
+        , "padding": "22px"
+        , "> .test": {
+            "color": "blue"
+          }
+        }, roundedCorners("10px"))
+      };
+      jscss.embed(jscss.compile(cssObj));
+    </script>
+  </head>
+  <body>
+    <div class="testing">
+      <span class="test">Just testing</span>
+    </div>
+  </body>
+</html>

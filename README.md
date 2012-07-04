@@ -119,9 +119,54 @@ module.exports = {
 }
 ```
 
-##Client-Side Usage
+##In the Browser
 
-No reason why it won't work on the client. I just need to wrap everything in a style tag :)
+```html
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script type="text/javascript" src="../lib/index.js"></script>
+    <script type="text/javascript">
+      // Mixin
+      var roundedCorners = function(radius){
+        radius || (radius = "5px");
+        return {
+          "-webkit-border-radius": radius
+        , "-moz-border-radius": radius
+        , "border-radius": radius
+        };
+      };
+      // Just a quick and dirty merge object
+      var mix = function(obj1, obj2){
+        for (var key in obj2){
+          obj1[key] = obj2[key];
+        }
+        return obj1;
+      };
+      // Css declarations
+      var cssObj = {
+        "body": {
+          "background-color": "pink"
+        }
+      , '.testing': mix({
+          "background-color": "#fff"
+        , "padding": "22px"
+        , "> .test": {
+            "color": "blue"
+          }
+        }, roundedCorners("10px"))
+      };
+      // Embed the compiled jscss object
+      jscss.embed(jscss.compile(cssObj));
+    </script>
+  </head>
+  <body>
+    <div class="testing">
+      <span class="test">Just testing</span>
+    </div>
+  </body>
+</html>
+```
 
 ##Animations, Media Queries, and Other More-Nested Features
 
@@ -206,16 +251,16 @@ jscss(
 // Or just pass in the paths
 ```
 
-##Leverage NPM
+##Leverage NPM or JAM
 
-Since these are node.js modules you're building for css, you can use npm to manage your css. Soon we'll be up on jam once I get client-side working.
+Since this is all javascript, use a package manager. Organize your code into self-contained javascript modules. Easily include everything you'll need
 
-##Note
+##Install
 
-I'm not ready for people to really start using this yet. It works, but it's not great. So, it's not in the npm registry just yet. But when it is, install it with:
+I'm not really ready for this to be part of any build tools, so for now, it only works in the browser. The examples show some module.exports stuff, but really, you'll want to make it AMD or CommonJS-node compatible.
 
 ```
-npm install jscss
+jam install jscss
 ```
 
 That's all, folks!

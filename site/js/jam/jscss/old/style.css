@@ -1,0 +1,35 @@
+/* ./layout.js*/
+
+.columns {
+  display: table;
+  width: 100%;
+}
+.columns > .column {
+  width: 50%;
+  box-sizing: border-box;
+  margin-left: 20px;
+}
+#header h1 {
+  font-size: 26px;
+  font-weight: bold;
+}
+#header p {
+  font-size: 12px;
+}
+#header p a {
+  text-decoration: none;
+}
+#header p > .poop {
+  color: brown;
+}
+#header .test {
+  font-size: 1.2rem;
+}
+@-animation-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

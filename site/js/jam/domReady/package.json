@@ -1,0 +1,6 @@
+{
+    "name": "domReady",
+    "version": "2.0.0-jam.1",
+    "description": "An AMD loader plugin for detecting DOM ready",
+    "main": "domReady.js"
+}

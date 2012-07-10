@@ -1,0 +1,17 @@
+{
+  "author": "John Fawcett <jrf0110@gmail.com> (johnfawcett.name)",
+  "name": "jscss",
+  "description": "An interface to CSS via Javascript. Attempts to accomplish the same thing as Less and Sass",
+  "version": "0.1.1",
+  "homepage": "https://github.com/jrf0110/jscss",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jrf0110/jscss.git"
+  },
+  "main": "lib/index.js",
+  "engines": {
+    "node": "~0.6.15"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

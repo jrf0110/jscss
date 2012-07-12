@@ -24,18 +24,20 @@ define(function(require){
     constructor: function(routes){
       this.enter = {};
       this.exit = {};
+      this.scopes = {};
       for (var route in routes){
         if (typeof routes[route] === "object"){
           if (routes[route].hasOwnProperty('enter')) this.enter[route] = routes[route].enter;
           if (routes[route].hasOwnProperty('exit')) this.exit[route] = routes[route].exit;
         }else this.enter[route] = routes[route];
+        this.scopes[route] = { _router: this };
       }
       this.silent = false;
     }
   , onHashChange: function(event){
       var hash = window.location.hash;
-      if (!this.silent && this.exit.hasOwnProperty(this.current)) this.exit[this.current].call(this);
-      if (!this.silent && this.enter.hasOwnProperty(hash)) this.enter[hash].call(this);
+      if (!this.silent && this.exit.hasOwnProperty(this.current)) this.exit[this.current].call(this.scopes[hash]);
+      if (!this.silent && this.enter.hasOwnProperty(hash)) this.enter[hash].call(this.scopes[hash]);
       this.current = hash;
       this.silent = false;
     }

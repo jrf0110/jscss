@@ -3,24 +3,27 @@ define(function(require){
 		// 3rd Party Dependencies
 
 		// App Dependencies
-
+    utils   = require('utils')
+  , globals = require('globals')
+  , grid    = require('grid')
+  , mixins  = require('mixins')
 
 		// Module Variables
-    serif = '"adelle", serif'
-  , sansSerif = '"adelle-sans", sans-serif'
-  , baseColor = "#f1f1f1";
-    css = {
+  , fonts     = globals.fonts
+  , color    = globals.color
+  , css = {
       "body": {
         "margin": "0"
       , "padding": "0"
-      , "font-family": sansSerif
-      , "color": baseColor
+      , "font-family": fonts.sansSerif
+      , "color": color.white
       , "background": "url('images/body-bg-banner.png') repeat-x 0 40px"
                   + ", url('images/body-bg.jpg')"
       }
       // Headers
    ,  "h1, h2, h3": {
-        "font-family": serif
+        "font-family": fonts.serif
+      , "color": color.orange
       }
 
       // Container
@@ -38,7 +41,6 @@ define(function(require){
         , "-webkit-box-orient": "horizontal"
         , "width": "100%"
         , "height": "195px"
-        , "background": "url('images/header-fold-left.png') no-repeat 0 0"
 
         , "> .fold-left": {
             "width": "21px"
@@ -65,7 +67,7 @@ define(function(require){
       , "> .app-content": {
           "height": "600px"
         , "margin": "0 22px 0 21px"
-        , "padding": "212px 12px 12px 12px"
+        , "padding": "212px 0 12px 0"
         , "background": "url('images/content-bg.jpg')"
         , "box-shadow": "0 0 4px rgba(0,0,0, 0.44)"
         }
@@ -73,5 +75,5 @@ define(function(require){
     }
 	;
 
-	return css;
+	return utils.extend(css, grid);
 });

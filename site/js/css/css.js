@@ -4,9 +4,9 @@ define(function(require){
 
 		// App Dependencies
     utils   = require('utils')
-  , globals = require('globals')
-  , grid    = require('grid')
-  , mixins  = require('mixins')
+  , globals = require('css/globals')
+  , grid    = require('css/grid')
+  , mixins  = require('css/mixins')
 
 		// Module Variables
   , fonts     = globals.fonts
@@ -17,6 +17,7 @@ define(function(require){
       , "padding": "0"
       , "font-family": fonts.sansSerif
       , "color": color.white
+      , "text-shadow": "0 1px 0 rgba(0, 0, 0, 0.5)"
       , "background": "url('images/body-bg-banner.png') repeat-x 0 40px"
                   + ", url('images/body-bg.jpg')"
       }
@@ -67,7 +68,7 @@ define(function(require){
       , "> .app-content": {
           "height": "600px"
         , "margin": "0 22px 0 21px"
-        , "padding": "212px 0 12px 0"
+        , "padding": "212px " + globals.grid.gutterWidth + " 12px " + globals.grid.gutterWidth
         , "background": "url('images/content-bg.jpg')"
         , "box-shadow": "0 0 4px rgba(0,0,0, 0.44)"
         }

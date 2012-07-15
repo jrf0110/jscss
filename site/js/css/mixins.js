@@ -12,7 +12,7 @@ define(function(require){
   // Grid - Span creates a column of a specified size
   mixins.span = function(size, numColumns, gutter){
     return utils.extend({
-      "width": (parseFloat(size) / numColumns) * 100 + "%"
+      "width": (size / numColumns) * 100 + "%"
     , "padding-left": gutter
     , "float": "left"
     }, mixins.boxSizing("border-box"));
@@ -20,7 +20,7 @@ define(function(require){
 
   mixins.offset = function(size, numColumns, gutter){
     return utils.extend({
-      "margin-left": (parseFloat(size) / numColumns) * 100 + "%"
+      "margin-left": (size / numColumns) * 100 + "%"
     , "padding-left": gutter
     , "float": "left"
     }, mixins.boxSizing("border-box"));

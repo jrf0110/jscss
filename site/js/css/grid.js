@@ -4,13 +4,16 @@ define(function(require){
 
     // App Dependencies
     utils   = require('utils')
-  , globals = require('globals')
-  , mixins  = require('mixins')
+  , globals = require('css/globals')
+  , mixins  = require('css/mixins')
 
     // Module Variables
     grid = {
       ".grid": {}
     , ".grid .row": {}
+    , ".grid .row > .span:first-child": {
+        "padding-left": "0"
+      }
     }
   ;
 

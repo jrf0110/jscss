@@ -9,6 +9,11 @@ var jam = {
             "name": "domReady",
             "location": "jam/domReady",
             "main": "domReady.js"
+        },
+        {
+            "name": "paper-boy",
+            "location": "jam/paper-boy",
+            "main": "paper-boy.js"
         }
     ],
     "version": "0.1.11",

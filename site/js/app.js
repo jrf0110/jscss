@@ -3,15 +3,16 @@ define(function(require){
     // Third Party dependencies
     jscss     = require('jscss')
   , domReady  = require('domReady')
+  , PaperBoy  = require('paper-boy')
 
     // App Dependencies
-  , appCss  = require('css')
+  , appCss  = require('css/css')
   , utils   = require('utils')
   , routes  = require('routes')
   , Views   = require('views')
 
     // Vars
-    router = new utils.Router(routes)
+    router = new PaperBoy(routes)
   ;
 
   jscss.embed(jscss.compile(appCss));

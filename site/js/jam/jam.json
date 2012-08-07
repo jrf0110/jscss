@@ -1,8 +1,0 @@
-{
-    "jam_version": "0.1.11",
-    "dependencies": {
-        "jscss": null,
-        "domReady": null,
-        "paper-boy": null
-    }
-}
